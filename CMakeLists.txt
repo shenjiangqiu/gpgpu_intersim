@@ -13,7 +13,6 @@ BISON_TARGET(Y config.y ${CMAKE_CURRENT_BINARY_DIR}/y.tab.c)
 find_package(FLEX REQUIRED)
 FLEX_TARGET(F config.l ${CMAKE_CURRENT_BINARY_DIR}/lex.yy.c)
 
-set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 

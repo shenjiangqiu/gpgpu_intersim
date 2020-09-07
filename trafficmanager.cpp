@@ -1974,9 +1974,9 @@ void TrafficManager::DisplayStats(ostream & os) const {
             continue;
         }
     
-        cout << "Class " << c << ":" << endl;
+        os << "Class " << c << ":" << endl;
     
-        cout 
+        os 
             << "Packet latency average = " << _plat_stats[c]->Average() << endl
             << "\tminimum = " << _plat_stats[c]->Min() << endl
             << "\tmaximum = " << _plat_stats[c]->Max() << endl
@@ -2004,7 +2004,7 @@ void TrafficManager::DisplayStats(ostream & os) const {
         rate_max = (double)count_max / time_delta;
         rate_avg = rate_sum / (double)_nodes;
         sent_packets = count_sum;
-        cout << "Injected packet rate average = " << rate_avg << endl
+        os << "Injected packet rate average = " << rate_avg << endl
              << "\tminimum = " << rate_min 
              << " (at node " << min_pos << ")" << endl
              << "\tmaximum = " << rate_max
@@ -2015,7 +2015,7 @@ void TrafficManager::DisplayStats(ostream & os) const {
         rate_max = (double)count_max / time_delta;
         rate_avg = rate_sum / (double)_nodes;
         accepted_packets = count_sum;
-        cout << "Accepted packet rate average = " << rate_avg << endl
+        os << "Accepted packet rate average = " << rate_avg << endl
              << "\tminimum = " << rate_min 
              << " (at node " << min_pos << ")" << endl
              << "\tmaximum = " << rate_max
@@ -2026,7 +2026,7 @@ void TrafficManager::DisplayStats(ostream & os) const {
         rate_max = (double)count_max / time_delta;
         rate_avg = rate_sum / (double)_nodes;
         sent_flits = count_sum;
-        cout << "Injected flit rate average = " << rate_avg << endl
+        os << "Injected flit rate average = " << rate_avg << endl
              << "\tminimum = " << rate_min 
              << " (at node " << min_pos << ")" << endl
              << "\tmaximum = " << rate_max
@@ -2037,16 +2037,16 @@ void TrafficManager::DisplayStats(ostream & os) const {
         rate_max = (double)count_max / time_delta;
         rate_avg = rate_sum / (double)_nodes;
         accepted_flits = count_sum;
-        cout << "Accepted flit rate average= " << rate_avg << endl
+        os << "Accepted flit rate average= " << rate_avg << endl
              << "\tminimum = " << rate_min 
              << " (at node " << min_pos << ")" << endl
              << "\tmaximum = " << rate_max
              << " (at node " << max_pos << ")" << endl;
     
-        cout << "Injected packet length average = " << (double)sent_flits / (double)sent_packets << endl
+        os << "Injected packet length average = " << (double)sent_flits / (double)sent_packets << endl
              << "Accepted packet length average = " << (double)accepted_flits / (double)accepted_packets << endl;
 
-        cout << "Total in-flight flits = " << _total_in_flight_flits[c].size()
+        os << "Total in-flight flits = " << _total_in_flight_flits[c].size()
              << " (" << _measured_in_flight_flits[c].size() << " measured)"
              << endl;
     

@@ -54,15 +54,15 @@ class FlitChannel : public Channel<Flit> {
 public:
   FlitChannel(Module * parent, string const & name, int classes);
 
-  void SetSource(Router const * const router, int port) ;
-  inline Router const * const GetSource() const {
+  void SetSource(Router const *  router, int port) ;
+  inline Router const *  GetSource() const {
     return _routerSource;
   }
   inline int const & GetSourcePort() const {
     return _routerSourcePort;
   }
-  void SetSink(Router const * const router, int port) ;
-  inline Router const * const GetSink() const {
+  void SetSink(Router const *  router, int port) ;
+  inline Router const *  GetSink() const {
     return _routerSink;
   }
   inline int const & GetSinkPort() const {

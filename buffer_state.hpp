@@ -47,8 +47,8 @@ class BufferState : public Module
   public:
     BufferPolicy(Configuration const &config, BufferState *parent,
                  const string &name);
-    virtual void SetMinLatency(int min_latency) {
-      std::cout<<"no min_latency:"<<min_latency<<std::endl;
+    virtual void SetMinLatency(int ) {
+      //std::cout<<"no min_latency:"<<min_latency<<std::endl;
     }
     virtual void TakeBuffer(int vc = 0);
     virtual void SendingFlit(Flit const *const f);

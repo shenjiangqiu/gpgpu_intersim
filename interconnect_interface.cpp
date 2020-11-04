@@ -195,7 +195,7 @@ void InterconnectInterface::Push(unsigned input_deviceID, unsigned output_device
   Flit::FlitType packet_type;
   auto req = (cache_interface_req *)data;
   auto type = req->type;
-  if (type == AccessType::writeClause or type == AccessType::writeWatcherList)
+  if (type == AccessType::WriteClause or type == AccessType::WriteWatcherList)
   {
     assert(input_deviceID < output_deviceID);
     packet_type = Flit::WRITE_REQUEST;
